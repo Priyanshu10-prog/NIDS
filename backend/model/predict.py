@@ -33,3 +33,5 @@ def predict_single(features: list) -> dict:
 
 def predict_batch(samples: list) -> list:
     return [predict_single(s) for s in samples]
+def load_model():
+    return pipeline
