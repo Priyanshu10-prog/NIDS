@@ -7,5 +7,4 @@ model-training/
 .env
 data/
 model-training/
-*.pkl
 *.csv
