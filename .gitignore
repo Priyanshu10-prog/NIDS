@@ -1,16 +1,7 @@
-# Web dependencies (The biggest culprits)
+# .gitignore
 node_modules/
-dist/
-build/
-
-# Python dependencies and environments
-venv/
-.env
 __pycache__/
 *.pyc
-
-# Large Model files (if pipeline.pkl is > 100MB)
-# backend/model/pipeline.pkl
-
-# System files
-.DS_Store
+data/          # CSVs are huge — don't push them
+model-training/
+.env
