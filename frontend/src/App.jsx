@@ -51,7 +51,7 @@ export default function App() {
 
 
   useEffect(() => {
-    fetch('/api/stats')
+    fetch(`${import.meta.env.VITE_API_URL || ''}/api/stats`)
       .then(r => r.json())
       .then(setStats)
       .catch(() => {})
@@ -60,7 +60,10 @@ export default function App() {
 
   const connectWS = useCallback(() => {
 
-    const ws = new WebSocket(`ws://${window.location.host}/ws/stream`)
+    const wsBase = (import.meta.env.VITE_API_URL || `http://${window.location.host}`)
+  .replace('https://', 'wss://')
+  .replace('http://', 'ws://')
+const ws = new WebSocket(`${wsBase}/ws/stream`)
     wsRef.current = ws
 
     ws.onopen = () => setWsStatus('connected')
