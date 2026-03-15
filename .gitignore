@@ -5,3 +5,7 @@ __pycache__/
 data/          # CSVs are huge — don't push them
 model-training/
 .env
+data/
+model-training/
+*.pkl
+*.csv
