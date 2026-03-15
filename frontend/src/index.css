@@ -1,0 +1,71 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cyan: #00f5ff;
+  --red: #ff3c64;
+  --green: #00ff88;
+  --amber: #ffb800;
+  --purple: #c084fc;
+  --bg: #020409;
+  --bg2: #050d1a;
+  --card: rgba(10, 20, 40, 0.85);
+  --border: rgba(0, 245, 255, 0.12);
+  --text: rgba(200, 220, 255, 0.85);
+  --text-muted: rgba(200, 220, 255, 0.4);
+  --mono: 'Share Tech Mono', 'Courier New', monospace;
+  --display: 'Rajdhani', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,245,255,0.2); border-radius: 2px; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.15); opacity: 1; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0,245,255,0.2); }
+  50%       { box-shadow: 0 0 20px rgba(0,245,255,0.6), 0 0 40px rgba(0,245,255,0.2); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scanline {
+  0%   { top: -2px; }
+  100% { top: 100%; }
+}
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--target-width); }
+}
+@keyframes ping {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
