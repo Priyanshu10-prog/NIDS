@@ -8,3 +8,5 @@ model-training/
 data/
 model-training/
 *.csv
+
+frontend/dist
