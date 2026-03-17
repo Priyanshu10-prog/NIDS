@@ -65,7 +65,7 @@ export default function Upload({ onResult, lastResult, onClear }) {
     formData.append('file', file)
     try {
       const ticker = setInterval(() => setProgress(p => Math.min(p + 6, 72)), 180)
-      const res    = await fetch('/api/upload', { method:'POST', body:formData })
+      const res    = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/upload`, { method:'POST', body:formData })
       clearInterval(ticker)
       if (!res.ok) { const err = await res.json(); throw new Error(err.detail || 'Upload failed') }
       setStep(2); setProgress(88)
